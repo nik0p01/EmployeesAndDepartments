@@ -8,26 +8,30 @@
     ".NETCoreApp,Version=v3.1": []
   },
   "packageFolders": {
-    "C:\\Users\\nikopol\\.nuget\\packages\\": {}
+    "C:\\Users\\simonov\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\nikopol\\source\\repos\\EmployeesAndDepartments\\EmployeesAndDepartments\\EmployeesAndDepartments.BL\\EmployeesAndDepartments.BL.csproj",
-      "projectName": "EmployeesAndDepartments.BL",
-      "projectPath": "C:\\Users\\nikopol\\source\\repos\\EmployeesAndDepartments\\EmployeesAndDepartments\\EmployeesAndDepartments.BL\\EmployeesAndDepartments.BL.csproj",
-      "packagesPath": "C:\\Users\\nikopol\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\nikopol\\source\\repos\\EmployeesAndDepartments\\EmployeesAndDepartments\\EmployeesAndDepartments.BL\\obj\\",
+      "projectUniqueName": "C:\\Users\\simonov\\source\\repos\\EmployeesAndDepartments\\EmployeesAndDepartments\\EmployeesAndDepartments\\EmployeesAndDepartments.csproj",
+      "projectName": "EmployeesAndDepartments",
+      "projectPath": "C:\\Users\\simonov\\source\\repos\\EmployeesAndDepartments\\EmployeesAndDepartments\\EmployeesAndDepartments\\EmployeesAndDepartments.csproj",
+      "packagesPath": "C:\\Users\\simonov\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\simonov\\source\\repos\\EmployeesAndDepartments\\EmployeesAndDepartments\\EmployeesAndDepartments\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\nikopol\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\simonov\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "c:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -54,6 +58,9 @@
         "assetTargetFallback": true,
         "warn": true,
         "frameworkReferences": {
+          "Microsoft.AspNetCore.App": {
+            "privateAssets": "none"
+          },
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
