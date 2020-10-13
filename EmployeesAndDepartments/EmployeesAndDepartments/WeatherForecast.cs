@@ -1,6 +1,6 @@
 using System;
 
-namespace EmployeesAndDepartments.WEBUI
+namespace EmployeesAndDepartments
 {
     public class WeatherForecast
     {
