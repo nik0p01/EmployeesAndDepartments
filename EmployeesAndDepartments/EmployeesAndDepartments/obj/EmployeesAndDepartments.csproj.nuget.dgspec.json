@@ -1,30 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\simonov\\source\\repos\\EmployeesAndDepartments\\EmployeesAndDepartments\\EmployeesAndDepartments\\EmployeesAndDepartments.csproj": {}
+    "C:\\Users\\nikopol\\source\\repos\\EmployeesAndDepartments\\EmployeesAndDepartments\\EmployeesAndDepartments\\EmployeesAndDepartments.csproj": {}
   },
   "projects": {
-    "C:\\Users\\simonov\\source\\repos\\EmployeesAndDepartments\\EmployeesAndDepartments\\EmployeesAndDepartments\\EmployeesAndDepartments.csproj": {
+    "C:\\Users\\nikopol\\source\\repos\\EmployeesAndDepartments\\EmployeesAndDepartments\\EmployeesAndDepartments\\EmployeesAndDepartments.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\simonov\\source\\repos\\EmployeesAndDepartments\\EmployeesAndDepartments\\EmployeesAndDepartments\\EmployeesAndDepartments.csproj",
+        "projectUniqueName": "C:\\Users\\nikopol\\source\\repos\\EmployeesAndDepartments\\EmployeesAndDepartments\\EmployeesAndDepartments\\EmployeesAndDepartments.csproj",
         "projectName": "EmployeesAndDepartments",
-        "projectPath": "C:\\Users\\simonov\\source\\repos\\EmployeesAndDepartments\\EmployeesAndDepartments\\EmployeesAndDepartments\\EmployeesAndDepartments.csproj",
-        "packagesPath": "C:\\Users\\simonov\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\simonov\\source\\repos\\EmployeesAndDepartments\\EmployeesAndDepartments\\EmployeesAndDepartments\\obj\\",
+        "projectPath": "C:\\Users\\nikopol\\source\\repos\\EmployeesAndDepartments\\EmployeesAndDepartments\\EmployeesAndDepartments\\EmployeesAndDepartments.csproj",
+        "packagesPath": "C:\\Users\\nikopol\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\nikopol\\source\\repos\\EmployeesAndDepartments\\EmployeesAndDepartments\\EmployeesAndDepartments\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\simonov\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\nikopol\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
-          "c:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {

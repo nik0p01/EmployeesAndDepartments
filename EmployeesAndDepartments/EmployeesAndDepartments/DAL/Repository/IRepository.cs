@@ -12,7 +12,7 @@ namespace EmployeesAndDepartments.DAL.Repository
         public void AddWorkingRate(WorkingRate workingRate);
         public List<Department> GetDepartmentsWithChief();
         public List<Employee> GetEmpoyeesByDepartmentId(Department department);
-        public List<WorkPosition> GetAllWorkPositionWithDepartment();
+        public List<WorkingRate> GetAllWorkPositionWithDepartment();
         public List<WorkingRate> GetFreeRates();
     }
 }

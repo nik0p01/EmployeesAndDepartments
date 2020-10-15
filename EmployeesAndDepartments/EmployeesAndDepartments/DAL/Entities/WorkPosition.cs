@@ -8,7 +8,7 @@ namespace EmployeesAndDepartments.DAL.Entities
     public class WorkPosition
     {
         public int id;
-        public int name;
+        public string name;
         public List<WorkingRate> WorkingRates;
     }
 }

@@ -43,7 +43,7 @@ namespace EmployeesAndDepartments.DAL.Repository
                 };
                 sqlParameters[3] = new SqlParameter
                 {
-                    ParameterName = "@email",
+                    ParameterName = "@idWorkingRates",
                     Value = employeeWorkingRate.workingRate.id
                 };
 
@@ -52,18 +52,73 @@ namespace EmployeesAndDepartments.DAL.Repository
                     command.Parameters.Add(sqlParameter);
                 }
 
-               command.ExecuteNonQuery();
+                command.ExecuteScalar();
+
             }
         }
 
         public void AddWorkingRate(WorkingRate workingRate)
         {
-            throw new NotImplementedException();
+            string sqlExpression = "AddWorkingRate";
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                connection.Open();
+                SqlCommand command = new SqlCommand(sqlExpression, connection);
+                command.CommandType = System.Data.CommandType.StoredProcedure;
+                SqlParameter[] sqlParameters = new SqlParameter[3];
+                sqlParameters[0] = new SqlParameter
+                {
+                    ParameterName = "@namePosition",
+                    Value = workingRate.workPositions.name
+                };
+                sqlParameters[1] = new SqlParameter
+                {
+                    ParameterName = "@Chief",
+                    Value = workingRate.chief
+                };
+                sqlParameters[2] = new SqlParameter
+                {
+                    ParameterName = "@idDepartment",
+                    Value = workingRate.department.id
+                };
+
+
+                foreach (var sqlParameter in sqlParameters)
+                {
+                    command.Parameters.Add(sqlParameter);
+                }
+
+                command.ExecuteScalar();
+            }
         }
 
-        public List<WorkPosition> GetAllWorkPositionWithDepartment()
+        public List<WorkingRate> GetAllWorkPositionWithDepartment()
         {
-            throw new NotImplementedException();
+            string sqlExpression = "GetAllWorkPositionWithDepartment";
+            List<WorkingRate> workPositions = new List<WorkingRate>();
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                connection.Open();
+                SqlCommand command = new SqlCommand(sqlExpression, connection);
+                command.CommandType = System.Data.CommandType.StoredProcedure;
+                var reader = command.ExecuteReader();
+                  
+                if (reader.HasRows)
+                {
+                    
+                    while (reader.Read())
+                    {
+                        workPositions.Add(new WorkingRate() { 
+                            department = new Department() { name = reader.GetString(0) }, 
+                            workPositions = new WorkPosition() { name = reader.GetString(1) } 
+                        });
+                       
+                    }
+                }
+                reader.Close();
+            }
+
+            return workPositions;
         }
 
         public List<Department> GetDepartmentsWithChief()
