@@ -26,6 +26,10 @@ namespace EmployeesDepartments.Controllers
         public IActionResult GetAllWorkPositionWithDepartment()
         {
             return View(_repository.GetAllWorkPositionWithDepartment());
+        }  
+        public IActionResult GetDepartmentsWithChief()
+        {
+            return View(_repository.GetDepartmentsWithChief());
         }
     }
 }
