@@ -14,5 +14,7 @@ namespace EmployeesDepartments.DAL.Repository
         public List<Employee> GetEmpoyeesByDepartmentId(Department department);
         public List<WorkingRate> GetAllWorkPositionWithDepartment();
         public List<WorkingRate> GetFreeRates();
+        public void UpdateEmpoyeeById(Employee employee);
+        public void EditWorkingRates(WorkingRate workingRate);
     }
 }

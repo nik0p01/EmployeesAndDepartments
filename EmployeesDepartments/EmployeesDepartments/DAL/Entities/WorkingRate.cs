@@ -9,7 +9,7 @@ namespace EmployeesDepartments.DAL.Entities
     {
         public int id;
         public Department department;
-        public WorkPosition workPositions;
+        public WorkPosition workPosition;
         public bool chief;
         public List<EmployeeWorkingRate> employeeWorkingRates;
     }
