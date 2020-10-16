@@ -7,22 +7,22 @@
 
 <html>
 <head>
-    <title>Список должностных позиций</title>
+    <title>Список отделов с указанием начальника</title>
 </head>
 <body>
     <h3>Должностные позиции</h3>
     <table>
         <tr>
-            <td>Должность</td>
             <td>Отдел</td>
+            <td>Начальник</td>
             <td></td>
         </tr>
-        @foreach (var workingRate in Model)
+        @foreach (var department in Model)
         {
             <tr>
-                <td>@workingRate.workPositions.name</td>
-                <td>@workingRate.department.name</td>
-                <td><a href="~/EmployeesDepartments/EditWorkRate/@workingRate.id">Редактировать</a></td>
+                <td>@department.name</td>
+                <td>@department.workingRates.First().employeeWorkingRates.First().employee.name</td>
+                <td><a href="~/EmployeesDepartments/??/@department.id">Список сотрудников</a></td>
             </tr>
         }
     </table>
