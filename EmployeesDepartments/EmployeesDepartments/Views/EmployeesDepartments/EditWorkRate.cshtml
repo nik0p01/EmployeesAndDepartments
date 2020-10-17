@@ -1,0 +1,43 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Изменение записи</title>
+</head>
+<body>
+    <div>
+      
+        <form method="post">
+            <input type="hidden" value="@ViewBag.WorkRateId" name="Id" />
+            <table>
+                <tr>
+                    <td>Должность:</td>
+                    <td><input type="text" name="namePosition" /> </td>
+                </tr>
+                <tr>
+                    <td>Начальник:</td>
+                    <td>
+                        <input type="checkbox" name="chief" value="true" >Да<Br>
+                       
+                    </td>
+                </tr>
+                <tr>
+                    <td>Отдел:</td>
+                    <td>
+                        <select size="1" name="DepartmentId">
+                            @foreach (var department in @ViewBag.Departments)
+                            {
+                                <option value="@department.id">@department.name</option>
+                            }
+                            </select>
+</td>
+                </tr>
+                <tr><td><input type="submit" value="Отправить" /> </td><td></td></tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>

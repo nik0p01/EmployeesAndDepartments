@@ -1,10 +1,6 @@
 ﻿using EmployeesDepartments.DAL.Entities;
 using Microsoft.Data.SqlClient;
-using System;
 using System.Collections.Generic;
-using System.Configuration;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace EmployeesDepartments.DAL.Repository
 {
@@ -15,7 +11,7 @@ namespace EmployeesDepartments.DAL.Repository
         {
             _connectionString = connectionString;
         }
-     
+
         public void AddEmployee(EmployeeWorkingRate employeeWorkingRate)
         {
 
@@ -102,17 +98,19 @@ namespace EmployeesDepartments.DAL.Repository
                 SqlCommand command = new SqlCommand(sqlExpression, connection);
                 command.CommandType = System.Data.CommandType.StoredProcedure;
                 var reader = command.ExecuteReader();
-                  
+
                 if (reader.HasRows)
                 {
-                    
+
                     while (reader.Read())
                     {
-                        workPositions.Add(new WorkingRate() { id = reader.GetInt32(2),
-                            department = new Department() { name = reader.GetString(0) }, 
-                            workPosition = new WorkPosition() { name = reader.GetString(1) } 
+                        workPositions.Add(new WorkingRate()
+                        {
+                            id = reader.GetInt32(2),
+                            department = new Department() { name = reader.GetString(0) },
+                            workPosition = new WorkPosition() { name = reader.GetString(1) }
                         });
-                       
+
                     }
                 }
                 reader.Close();
@@ -124,7 +122,7 @@ namespace EmployeesDepartments.DAL.Repository
         public List<Department> GetDepartmentsWithChief()
         {
             string sqlExpression = "GetDepartmentsWithChief";
-            List<Department> departments   = new List<Department>();
+            List<Department> departments = new List<Department>();
             using (SqlConnection connection = new SqlConnection(_connectionString))
             {
                 connection.Open();
@@ -140,16 +138,14 @@ namespace EmployeesDepartments.DAL.Repository
                         departments.Add(new Department()
                         {
                             id = reader.GetInt32(0),
-                             name = reader.GetString(1),
-                              workingRates = new List<WorkingRate>() { new WorkingRate() { employeeWorkingRates = new List<EmployeeWorkingRate>() 
-                              { new EmployeeWorkingRate() { employee = new Employee() { name = reader.GetString(2) } } } } }
+                            name = reader.GetString(1),
+                            workingRates = new List<WorkingRate>() { new WorkingRate() { employeeWorkingRates = new List<EmployeeWorkingRate>()
+                              { new EmployeeWorkingRate() { employee = new Employee() { name = reader.GetSqlString(2).ToString() } } } } }
                         });
-
                     }
                 }
                 reader.Close();
             }
-
             return departments;
         }
 
@@ -169,7 +165,7 @@ namespace EmployeesDepartments.DAL.Repository
                     ParameterName = "@departmentID",
                     Value = department.id
                 };
-         
+
                 foreach (var sqlParameter in sqlParameters)
                 {
                     command.Parameters.Add(sqlParameter);
@@ -219,12 +215,10 @@ namespace EmployeesDepartments.DAL.Repository
                 }
                 reader.Close();
             }
-
             return workingRates;
         }
 
-
-        public void UpdateEmpoyeeById(Employee employee)
+        public void EditEmpoyeeById(Employee employee)
         {
             string sqlExpression = "UpdateEmpoyeeById";
             using (SqlConnection connection = new SqlConnection(_connectionString))
@@ -258,9 +252,7 @@ namespace EmployeesDepartments.DAL.Repository
                 command.ExecuteScalar();
             }
         }
-
-
-        public void EditWorkingRates(WorkingRate  workingRate)
+        public void EditWorkingRates(WorkingRate workingRate)
         {
             string sqlExpression = "EditWorkingRates";
             using (SqlConnection connection = new SqlConnection(_connectionString))
@@ -297,6 +289,59 @@ namespace EmployeesDepartments.DAL.Repository
 
                 command.ExecuteScalar();
             }
+        }
+
+        public List<Department> GetAllDepartments()
+        {
+            string sqlExpression = "GetAllDepartments";
+            List<Department> departments = new List<Department>();
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                connection.Open();
+                SqlCommand command = new SqlCommand(sqlExpression, connection);
+                command.CommandType = System.Data.CommandType.StoredProcedure;
+                var reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        departments.Add(new Department()
+                        {
+                            id = reader.GetInt32(0),
+                            name = reader.GetString(1),
+                        });
+                    }
+                }
+                reader.Close();
+            }
+            return departments;
+        }
+
+        public List<Employee> GetAllEmployees()
+        {
+            string sqlExpression = "GetAllEmployees";
+            List<Employee> employees = new List<Employee>();
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                connection.Open();
+                SqlCommand command = new SqlCommand(sqlExpression, connection);
+                command.CommandType = System.Data.CommandType.StoredProcedure;
+                var reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        employees.Add(new Employee()
+                        {
+                            id = reader.GetInt32(0),
+                            name = reader.GetString(1),
+                            email = reader.GetString(2),
+                        });
+                    }
+                }
+                reader.Close();
+            }
+            return employees;
         }
     }
 }

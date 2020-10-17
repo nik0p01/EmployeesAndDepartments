@@ -22,7 +22,7 @@
             <tr>
                 <td>@department.name</td>
                 <td>@department.workingRates.First().employeeWorkingRates.First().employee.name</td>
-                <td><a href="~/EmployeesDepartments/??/@department.id">Список сотрудников</a></td>
+                <td><a href="~/EmployeesDepartments/GetEmpoyeesByDepartmentId/@department.id">Список сотрудников</a></td>
             </tr>
         }
     </table>

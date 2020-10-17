@@ -1,11 +1,6 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using EmployeesDepartments.DAL.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -27,7 +22,7 @@ namespace EmployeesDepartments
             services.AddControllersWithViews();
 
             var connString = Configuration.GetConnectionString("EmployeesAndDepartments");
-            services.AddSingleton<IRepository, RepositoryMSSQLStoredProcedures>(sp =>new RepositoryMSSQLStoredProcedures(connString));
+            services.AddSingleton<IRepository, RepositoryMSSQLStoredProcedures>(sp => new RepositoryMSSQLStoredProcedures(connString));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

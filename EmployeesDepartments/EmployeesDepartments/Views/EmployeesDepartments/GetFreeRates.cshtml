@@ -1,0 +1,30 @@
+﻿@model IEnumerable<EmployeesDepartments.DAL.Entities.WorkingRate>
+@{
+
+    Layout = null;
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Список свободных должностных позиций</title>
+</head>
+<body>
+    <h3>Должностные позиции</h3>
+    <table>
+        <tr>
+            <td>Должность</td>
+            <td>Отдел</td>
+            <td></td>
+        </tr>
+        @foreach (var workingRate in Model)
+        {
+            <tr>
+                <td>@workingRate.workPosition.name</td>
+                <td>@workingRate.department.name</td>
+              
+            </tr>
+        }
+    </table>
+</body>
+</html>

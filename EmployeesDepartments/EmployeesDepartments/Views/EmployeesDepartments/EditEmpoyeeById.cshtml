@@ -1,0 +1,29 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Изменение записи</title>
+</head>
+<body>
+    <div>
+        <form method="post">
+            <input type="hidden" value="@ViewBag.EmpoyeeId" name="Id" />
+            <table>
+                <tr>
+                    <td>Имя:</td>
+                    <td><input type="text" name="name" /> </td>
+                </tr>
+                <tr>
+                    <td>E-mail:</td>
+                    <td><input type="text" name="email" /> </td>
+                </tr>
+                
+                <tr><td><input type="submit" value="Отправить" /> </td><td></td></tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>

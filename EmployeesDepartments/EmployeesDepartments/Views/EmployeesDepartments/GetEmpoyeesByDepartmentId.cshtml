@@ -1,0 +1,30 @@
+﻿@model IEnumerable<EmployeesDepartments.DAL.Entities.Employee>
+@{
+
+    Layout = null;
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Список сотрудников отдела</title>
+</head>
+<body>
+    <h3>Сотрудники отдела</h3>
+    <table>
+        <tr>
+            <td>Имя</td>
+            <td>Емайл</td>
+          
+        </tr>
+        @foreach (var employee in Model)
+        {
+    <tr>
+        <td>@employee.name</td>
+        <td>@employee.email</td>
+        <td><a href="~/EmployeesDepartments/EditEmpoyeeById/@employee.id">Редактировать</a></td>
+    </tr>
+        }
+    </table>
+</body>
+</html>
