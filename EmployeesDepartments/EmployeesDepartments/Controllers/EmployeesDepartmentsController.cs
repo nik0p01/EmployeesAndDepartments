@@ -7,13 +7,10 @@ namespace EmployeesDepartments.Controllers
 {
     public class EmployeesDepartmentsController : Controller
     {
-        private readonly ILogger<EmployeesDepartmentsController> _logger;
         private readonly IRepository _repository;
         public EmployeesDepartmentsController(ILogger<EmployeesDepartmentsController> logger, IRepository repository)
         {
-            _logger = logger;
             _repository = repository;
-
         }
 
         public IActionResult Index()
